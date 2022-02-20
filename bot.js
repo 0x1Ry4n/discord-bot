@@ -90,8 +90,8 @@ function RandomImage() {
     const image = randomImage(images);
 
     const embed = new discordAPI.MessageEmbed()
-        .setTitle('homem')
-        .setAuthor('homem')
+        .setTitle('guay')
+        .setAuthor('guay')
         .attachFiles([`${path}${image}`])
         .setImage(`attachment://${image}`);
 
