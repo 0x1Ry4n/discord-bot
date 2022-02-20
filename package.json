@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "@discordjs/opus": "^0.5.3",
+    "discord.js": "^12.5.3",
+    "ffmpeg": "^0.0.4",
+    "ffmpeg-static": "^4.4.1",
+    "fluent-ffmpeg": "^2.1.2",
+    "snekfetch": "^4.0.4",
+    "ytdl-core": "^4.10.1"
+  }
+}
