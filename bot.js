@@ -37,7 +37,7 @@ client.on("message", async message => {
             }
             return;
         case "luis":
-            var count = 0;
+            let count = 0;
             while (count < 3) {
                 setTimeout(() => {
                     message.reply("Sim, o Luís é lindo!")
@@ -52,7 +52,7 @@ client.on("message", async message => {
             message.reply("Albion online - https://albiononline.com/pt/home");
             return;
         case "seila":
-            var embed = RandomImage();
+            let embed = RandomImage();
 
             try {
                 message.channel.send(embed);
@@ -76,8 +76,9 @@ client.on("error", (error) => {
 });
 
 function RandomImage() {
-    var randomImage = (arr) => arr[Math.floor(Math.random() * arr.length)];
-
+    let randomImage = (arr) => arr[Math.floor(Math.random() * arr.length)];
+    
+    const path = './images/amigos/';
     const images = [
         '',
         '',
@@ -86,10 +87,10 @@ function RandomImage() {
         ''
     ];
 
-    const path = './images/amigos/';
-    const image = randomImage(images);
+   
+    let image = randomImage(images);
 
-    const embed = new discordAPI.MessageEmbed()
+    let embed = new discordAPI.MessageEmbed()
         .setTitle('guay')
         .setAuthor('guay')
         .attachFiles([`${path}${image}`])
