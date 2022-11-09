@@ -17,68 +17,65 @@ client.on("message", async message => {
     switch (command) {
         case "help":
             message.reply(`
-            Comandos: 
+                Comandos: 
 
-            **?luis** - luis
-            **?julio** - julio
-            **?gui** - o grande
-            **?seila** - envia imagens
-            **?vitor** - vitor
-            **?help** - ajudinha
-            
+                **?luis** - Luís
+                **?julio** - Júlio
+                **?gui** - O Grande
+                **?seila** - Envia imagens
+                **?vitor** - Vitor
+                **?help** - Ajudinha
             `);
             return;
+            
         case "julio":
-            try {
-                Meow(message);
-                message.channel.send("Júlio, eu te amo &hearts");
-            } catch (err) {
-                message.reply("Erro: ", err);
-            }
+            Meow(message);
+            message.channel.send("Júlio, eu te amo &hearts");
             return;
+            
         case "luis":
             let count = 0;
             while (count < 3) {
                 setTimeout(() => {
-                    message.reply("Sim, o Luís é lindo!")
+                        message.reply("Sim, o Luís é lindo!");
+                        message.reply("Message error: " + error);
                 }, 1000);
                 count++;
             }
             return;
+            
         case "gui":
             message.reply("Gordaum kskskfdkja");
             return;
+            
         case "vitor":
             message.reply("Albion online - https://albiononline.com/pt/home");
             return;
+        
         case "seila":
             let embed = RandomImage();
-
-            try {
-                message.channel.send(embed);
-            } catch (e) {
-                console.log("Erro ", e);
-                message.reply("erro");
-            }
+            message.channel.send(embed);
+            message.reply("erro");
             return;
+        
         default:
-            message.reply("Digita alguma opção válida! Tenta chutar!");
+            message.reply("Digite alguma opção válida! Tente chutar!");
             return;
     }
 });
 
 client.on("disconnect", () => {
-    console.log("Disconectado do server!");
+    console.log("Disconnected from server!");
 });
 
 client.on("error", (error) => {
-    console.error("Erro no bot: ", error);
+    console.error("Bot error: ", error);
 });
 
 function RandomImage() {
     let randomImage = (arr) => arr[Math.floor(Math.random() * arr.length)];
     
-    const path = './images/amigos/';
+    const path = './images/friends/';
     const images = [
         '',
         '',
@@ -104,8 +101,8 @@ async function Meow(message) {
         get('https://aws.random.cat/meow').then(response => {
             message.channel.send({ files: [{ attachment: response.body.file, name: `cat.${response.body.file.split('.')[4]}` }] });
         })
-    } catch (e) {
-        console.log(`Error Meow: ${e.message}`);
+    } catch (error) {
+        console.log("Meow API error: " + error);
     }
 }
 
