@@ -1,6 +1,6 @@
 const discordAPI = require("discord.js");
-const config = require("./config/config.json");
 const { get } = require("snekfetch");
+const config = require("./config/config.json");
 
 const client = new discordAPI.Client();
 
