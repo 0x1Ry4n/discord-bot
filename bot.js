@@ -30,7 +30,7 @@ client.on("message", async message => {
             return;
         case "julio":
             try {
-                meow(message);
+                Meow(message);
                 message.channel.send("Júlio, eu te amo &hearts");
             } catch (err) {
                 message.reply("Erro: ", err);
@@ -99,13 +99,13 @@ function RandomImage() {
     return embed;
 }
 
-async function meow(message) {
+async function Meow(message) {
     try {
         get('https://aws.random.cat/meow').then(response => {
             message.channel.send({ files: [{ attachment: response.body.file, name: `cat.${response.body.file.split('.')[4]}` }] });
         })
     } catch (e) {
-        console.log('Error Meow!');
+        console.log(`Error Meow: ${e.message}`);
     }
 }
 
