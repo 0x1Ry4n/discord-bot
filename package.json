@@ -6,6 +6,6 @@
     "ffmpeg-static": "^4.4.1",
     "fluent-ffmpeg": "^2.1.2",
     "snekfetch": "^4.0.4",
-    "ytdl-core": "^4.10.1"
+    "ytdl-core": "^4.11.2"
   }
 }
